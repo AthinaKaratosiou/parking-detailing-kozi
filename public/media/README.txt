@@ -1,0 +1,1 @@
+Place approved website images and videos here. The received-photos folder contains the original images supplied for the project. They are retained as source material and have not yet been assigned to final page positions. The hero and gallery currently use neutral placeholders until the video and photo selection is completed.
