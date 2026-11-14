@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useParams, Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, CarFront, Droplets, Zap, ShoppingBag, Clock3, MapPin, ShieldCheck, Sparkles } from 'lucide-react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ParkingPage from './pages/ParkingPage'
 import { content, type Language } from './data/content'
 
 function Home({ lang, t }: { lang: Language; t: typeof content.el }) {
@@ -70,7 +71,7 @@ function LangApp() {
   return <><Header lang={lang} setLang={() => {}} t={t}/><Routes>
     <Route index element={<Home lang={lang} t={t}/>} />
     <Route path="about" element={<GenericPage lang={lang} title={lang === 'el' ? 'Η επιχείρηση' : 'About KOZI'} subtitle={lang === 'el' ? 'Γνώρισε την ταυτότητα, τις εγκαταστάσεις και τη φιλοσοφία εξυπηρέτησης του ΚΟΖΙ.' : 'Discover KOZI, our facilities and our approach to customer service.'}/>} />
-    <Route path="parking/*" element={<GenericPage lang={lang} title="Parking" subtitle={lang === 'el' ? 'Χώρος στάθμευσης 3.300 m². Πληροφορίες, επιλογές και τιμοκατάλογος.' : 'A 3,300 m² parking facility. Information, options and pricing.'}/>} />
+    <Route path="parking/*" element={<ParkingPage lang={lang} />} />
     <Route path="car-wash/*" element={<GenericPage lang={lang} title="Car Wash" subtitle={lang === 'el' ? 'Υπηρεσίες καθαρισμού και περιποίησης αυτοκινήτου.' : 'Vehicle cleaning and detailing services.'}/>} />
     <Route path="ev-charging" element={<GenericPage lang={lang} title="EV Charging" subtitle={lang === 'el' ? 'Πληροφορίες για τη φόρτιση ηλεκτρικών οχημάτων.' : 'Information about electric vehicle charging.'}/>} />
     <Route path="products/*" element={<GenericPage lang={lang} title={lang === 'el' ? 'Προϊόντα' : 'Products'} subtitle={lang === 'el' ? 'Ο κατάλογος προϊόντων αυτοκινήτου του ΚΟΖΙ.' : 'Explore the KOZI automotive product catalogue.'}/>} />
