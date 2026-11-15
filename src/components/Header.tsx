@@ -1,9 +1,10 @@
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import type { Language } from '../data/content'
+import { type Language, type content } from '../data/content'
+type Content = (typeof content)[Language]
 
-type Props = { lang: Language; setLang: (lang: Language) => void; t: typeof import('../data/content').content.el }
+type Props = { lang: Language; setLang: (lang: Language) => void; t: Content }
 
 export default function Header({ lang, setLang, t }: Props) {
   const [open, setOpen] = useState(false)

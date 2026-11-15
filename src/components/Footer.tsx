@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Clock } from 'lucide-react'
-import type { Language } from '../data/content'
+import { type Language, type content } from '../data/content'
+type Content = (typeof content)[Language]
 
-export default function Footer({ lang, t }: { lang: Language; t: typeof import('../data/content').content.el }) {
+export default function Footer({ lang, t }: { lang: Language; t: Content }) {
   return <footer className="footer">
     <div className="footer-grid">
       <div><div className="brand-mark footer-brand">ΚΟΖΙ</div><p className="muted">PARKING • CAR WASH • AUTOMOTIVE CARE</p><p className="footer-note">{t.footer}</p></div>
